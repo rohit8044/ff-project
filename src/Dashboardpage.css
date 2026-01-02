@@ -74,12 +74,18 @@
   left: 0px;
   position: fixed;
 }
+
 .dashboardheding{
   padding-top: 20px;
   font-size: 20px;
   color: white;
   padding-bottom: 20px;
   text-shadow: 1px 1px 5px lightblue;
+  text-align: center;
+}
+.dashboard h1:hover {
+  transform: scale(1.05); /* Slight grow effect on hover */
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4), -2px -2px 4px rgba(255, 255, 255, 0.3); /* More defined shadow on hover */
 }
 .sidebar.hidden {
   width: 0;
@@ -88,13 +94,16 @@
 
 .sidebar .link {
   display: block;
-  padding: 5px 20px;
+  padding: 15px 30px;
+  text-align: center;
   color: #ccc;
   text-decoration: none;
-  margin-bottom: 8px;
+  margin-bottom: 15px;
   border-radius: 6px;
   font-size: 15px;
   color: white;
+  transition: 0.5s;
+  background: linear-gradient(90deg, rgb(180, 18, 18), rgb(192, 129, 12), rgb(201, 201, 193));
 }
 
 .sidebar .link:hover {
@@ -111,7 +120,6 @@
 
 /*dashboardpage mein contents */
 .dashboard {
-  
   background-color: white;
   box-sizing: border-box;
   background-color: white;
