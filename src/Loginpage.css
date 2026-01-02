@@ -12,8 +12,8 @@
   background: linear-gradient(135deg, #232526, #414345);
 }
 .logindiv{
-  width: 90%;
-  max-width: 400px;
+  width: 97%;
+  max-width: 500px;
   padding: 30px 25px;
   border-radius: 15px;
   box-shadow: 0 3px 20px rgba(220, 243, 9, 0.15);
@@ -88,14 +88,14 @@ label{
 }
 .logindiv .create{
     float: right;
-    font-size: 18px;
+    font-size: 17px;
     text-decoration: none;
      color: lightcoral;
     margin-top: 19px;
 }
 .logindiv .forget{
     float: left;
-    font-size: 18px;
+    font-size: 17px;
     text-decoration: none;
      color: lightcoral;
     margin-top: 19px;
