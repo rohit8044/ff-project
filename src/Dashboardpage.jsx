@@ -39,8 +39,12 @@ export default function Dashboardpage() {
         {/* Sidebar */}
         <div className={`sidebar ${sidebarOpen ? "open" : "hidden"}`}>
           <div className="logouser"></div>
-          <h1 className="dashboardheding">DASHBOARD</h1>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+               <h1 className="dashboardheding">DASHBOARD</h1>
+          </Link>
+
           <Link className="link" to="manageaccount" >Manage Account</Link>
+          <Link className="link" to="phone">Hack Download</Link>
           <Link className="link" to="phone">Hack Download</Link>
         </div>
 
@@ -57,7 +61,6 @@ export default function Dashboardpage() {
     </div>
   );
 }
-
 
 
 
