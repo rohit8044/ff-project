@@ -41,7 +41,7 @@ export default function Registerpage(){
           <label>Enter Full Name</label>
           <div className="inputbox">
             <span className="icon">👤</span>
-            <input type="text" placeholder="Enter Full Name" required name='User' onChange={changevalue}/>
+            <input type="text" placeholder="Candidate Name" required name='User' onChange={changevalue}/>
           </div>
 
           <label>Phone Number</label>
