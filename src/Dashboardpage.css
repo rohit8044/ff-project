@@ -1,0 +1,132 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.app {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+/* Top Bar */
+.topbar {
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #232526, #414345);
+  border-bottom: 1px solid #2a2a2a;
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  float: right;
+}
+
+.logo-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #7cc6ff, #4a7cff);
+  display: inline-block;
+}
+
+/* Menu Icon */
+.menu-icon {
+  width: 26px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-icon div {
+  width: 100%;
+  height: 3px;
+  background: #e0e0e0;
+  border-radius: 3px;
+}
+
+/* Layout */
+.container {
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 180px;
+  background: linear-gradient(135deg, #232526, #414345);
+  height: 100vh;
+  padding-left: 7px;
+  border-right: 1px solid #2a2a2a;
+  transition: 0.3s;
+  overflow: hidden;
+  float: left;
+  position: absolute;
+  left: 0px;
+  position: fixed;
+}
+.dashboardheding{
+  padding-top: 20px;
+  font-size: 20px;
+  color: white;
+  padding-bottom: 20px;
+  text-shadow: 1px 1px 5px lightblue;
+}
+.sidebar.hidden {
+  width: 0;
+  padding: 0;
+}
+
+.sidebar .link {
+  display: block;
+  padding: 5px 20px;
+  color: #ccc;
+  text-decoration: none;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  font-size: 15px;
+  color: white;
+}
+
+.sidebar .link:hover {
+  background: lightcoral;
+  color:lightgoldenrodyellow;
+}
+
+/* Main Content */
+.content {
+  flex: 1;
+  background-color: white;
+  height: 100vh;
+}
+
+/*dashboardpage mein contents */
+.dashboard {
+  
+  background-color: white;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.dashboard h1{
+  text-align: center;
+  font-size: 40px;
+  background: linear-gradient(90deg, rgb(180, 18, 18), rgb(192, 129, 12), rgb(201, 201, 193));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-decoration: underline;
+  text-shadow: 3px 3px 5px black;
+}
+h1{
+  color: black;
+}
