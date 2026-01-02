@@ -38,7 +38,7 @@ export default function Registerpage(){
           <h3 className='regster'>REGISTER</h3>
         <form onSubmit={handleSubmit }> 
 
-          <label>Enter Full Name</label>
+          <label>Candidate Name</label>
           <div className="inputbox">
             <span className="icon">👤</span>
             <input type="text" placeholder="Candidate Name" required name='User' onChange={changevalue}/>
