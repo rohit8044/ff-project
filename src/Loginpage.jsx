@@ -31,7 +31,7 @@ export default function Loginpage(){
                 <label>Password</label>
                  <div  className='inputbox'>
                     <span className="logo">🔒</span>
-                   <input type={showPassword ? "text" : "password"} placeholder="Password" required />
+                   <input type={showPassword ? "text" : "password"} placeholder="Password" required  maxLength={12}/>
                     <button type="button" onClick={() => setShowPassword(!showPassword)} className='showbtn'> {showPassword ? <FiEyeOff /> : <FiEye />}</button>
                 </div>
                 <button className='loginbtn'>Log in</button>
