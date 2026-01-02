@@ -1,4 +1,5 @@
 import './Loginpage.css'
+import { Link } from "react-router-dom";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { FiEye, FiEyeOff } from "react-icons/fi";
@@ -35,7 +36,7 @@ export default function Loginpage(){
                 </div>
                 <button className='loginbtn'>Log in</button>
                 </form>
-                 <a href="register" className='create'>Creact Account</a>
+                 <Link to="/register" className='create'>Creact Account</Link>
                 <a href="#" className='forget'>Forget Password</a>
                 <p className='Garena'>© Garena  Free Fire Style</p>
             </div>
