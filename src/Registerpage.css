@@ -1,48 +1,45 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
 }
-.regcontainer {
+.container{
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #232526, #414345);
-
 }
-.regbox {
-  width: 90%;
-  max-width: 400px;
-  background: #fff;
+.logindiv{
+  width: 97%;
+  max-width: 500px;
   padding: 30px 25px;
   border-radius: 15px;
   box-shadow: 0 3px 20px rgba(220, 243, 9, 0.15);
   background: linear-gradient(135deg, #232526, #414345);
 }
-.regbox .regster{
+.logindiv h3{
   text-align: center;
   color: #ff9f00;
   font-family: 'Orbitron',ans-serif;
-  font-size: 35px;
+  font-size: 40px;
   margin-bottom: 30px;
   text-shadow: 10px 10px 10px black;
 }
-.regbox label {
-  font-size: 15px;
+label{
+  font-size: 17px;
   font-weight: 600;
   margin-bottom: 5px;
   display: block;
   color: lightcoral;
 }
-.inputbox {
-  position: relative;
-  width: 100%;
-  margin-bottom: 18px;
+.inputbox{
+    position: relative;
+    width: 100%;
+    margin-bottom: 18px;
 }
-.inputbox .icon {
+.inputbox .logo{
   position: absolute;
   left: 12px;
   top: 50%;
@@ -50,44 +47,70 @@
   font-size: 18px;
   color: #666;
 }
-.inputbox input {
+.logindiv .inputbox input{
   width: 100%;
   padding: 14px 14px 14px 40px;
   border-radius: 10px;
   border: 1px solid lightcoral;
-  font-size: 14px;
-  outline: none;
-  transition: 0.3s ease;
   background: linear-gradient(135deg, #232526, #414345);
+  font-size: 15px;
+  outline: none;
   color: white;
+  transition: 0.3s ease;
 }
-.inputbox input:focus {
-  color: white;
+.logindiv .inputbox input:focus {
+  border-color: #4a90e2;
   background: linear-gradient(135deg, #232526, #414345);
   box-shadow: 0px 0px 6px rgba(30, 221, 13, 0.3);
 }
-.regbox .registerbtn{
-  width: 100%;
-  font-size: 20px;
-  padding:10px;
-  border-radius: 6px;
-  border: none;
-  background:linear-gradient(90deg,#ff004f,#ff6a00);  cursor: pointer;
-  color: white;
-}
-.regbox .showbtn{
+.logindiv .showbtn{
   position: absolute;
-  margin-top: 13px;
+  margin-top: 14px;
   margin-left: -40px;
   font-size: 20px;
   background: none;
   border: none;
   color: whitesmoke;
 }
-.regbox .registerbtn:hover{
-  transform: scale(1.02);
+.logindiv .loginbtn{
+  width: 100%;
+  font-size: 20px;
+  padding:10px;
+  border-radius: 6px;
+  border: none;
+  font-family: 'Orbitron',ans-serif;
+  color: white;
+  background:linear-gradient(90deg,#ff004f,#ff6a00);  cursor: pointer;
+  transition: 0.3s;
 }
-.errormessa{
-  margin-bottom: 15px;
-  font-size: 13px;
+.logindiv .loginbtn:hover{
+ transform:scale(1.01);
+}
+.logindiv .create{
+    float: right;
+    font-size: 17px;
+    text-decoration: none;
+     color: lightcoral;
+    margin-top: 19px;
+}
+.logindiv .forget{
+    float: left;
+    font-size: 17px;
+    text-decoration: none;
+     color: lightcoral;
+    margin-top: 19px;
+}
+.logindiv .create:hover{
+  color: lightsalmon;
+}
+.logindiv .forget:hover{
+     color: lightsalmon;
+}
+.logindiv .Garena{
+  color: lightcoral;
+  padding-top: 70px;
+  text-align: center;
+   font-family: 'Orbitron',ans-serif;
+   font-size: 20px;
+   text-shadow: 10px 10px 10px red;
 }
