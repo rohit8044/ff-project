@@ -4,63 +4,75 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 
 export default function Dashboardpage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-
   const location = useLocation();
 
   const isDashboardHome = location.pathname === "/dashboard";
 
-  // Auto-hide sidebar when navigating
-  useEffect(() => {
-    if (location.pathname !== "/dashboard") {
-      setSidebarOpen(false);
-    }
-  }, [location.pathname]);
+  // Sidebar close on route change
+useEffect(() => {
+   setSidebarOpen(false);
+  if (location.pathname.startsWith("/dashboard")) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [location.pathname]);
 
   return (
     <div className="app">
-
+      
       {/* Top Bar */}
       <div className="topbar">
-        <div className="logo">
-          <span className="logo-icon"></span>
-          ROHIT
-        </div>
+        
 
-        <div className="menu-icon" onClick={() => setSidebarOpen(!sidebarOpen)}>
+        <div
+          className="menu-icon"
+          onClick={() => setSidebarOpen(true)}
+        >
           <div></div>
           <div></div>
           <div></div>
         </div>
+        <div className="logo">ROHIT</div>
+      </div>
+            
+      {/* Overlay */}
+      {sidebarOpen && (
+        <div className="overlay" onClick={() => setSidebarOpen(false)}></div>
+      )}
+
+      {/* Sidebar */}
+      <div className={`sidebar ${sidebarOpen ? "open" : ""}`}>
+        <button className="close-btn" onClick={() => setSidebarOpen(false)}>
+          ✖
+        </button>
+
+        <Link to="/dashboard" className="link">
+          Dashboard
+        </Link>
+
+        <Link to="manageaccount" className="link">
+          Manage Account
+        </Link>
+
+        <Link to="phone" className="link">
+          Hack Download
+        </Link>
       </div>
 
-      {/* Layout */}
-      <div className="container">
-
-        {/* Sidebar */}
-        <div className={`sidebar ${sidebarOpen ? "open" : "hidden"}`}>
-          <div className="logouser"></div>
-          <Link to="/" style={{ textDecoration: 'none' }}>
-               <h1 className="dashboardheding">DASHBOARD</h1>
-          </Link>
-
-          <Link className="link" to="manageaccount" >Manage Account</Link>
-          <Link className="link" to="phone">Hack Download</Link>
-          <Link className="link" to="phone">Hack Download</Link>
-        </div>
-
-        {/* Main Content */}
-        <div className="content">
-          {isDashboardHome && (
-            <div className="dashboard">
-              <h1>WELCOME PLAYERS</h1>
-            </div>
-          )}
-          <Outlet />
-        </div>
+      {/* Main Content */}
+      <div className="content">
+        {isDashboardHome && (
+          <div className="dashboard">
+            <h1>WELCOME PLAYERS</h1>
+          </div>
+        )}
+        <Outlet />
       </div>
     </div>
   );
 }
-
-
-
