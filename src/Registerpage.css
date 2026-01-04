@@ -81,7 +81,8 @@
   width: 46%;
   margin-top: 20px;
   font-size: 18px;
-  padding:20px;
+  padding-top:20px;
+  padding-bottom: 20px;
   border-radius: 6px;
   border: none;
   background:linear-gradient(90deg,#ff004f,#ff6a00);  cursor: pointer;
