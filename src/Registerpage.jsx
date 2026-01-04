@@ -29,7 +29,9 @@ export default function Registerpage(){
    }else{
     nav('/')
    }
-
+  }
+  const allready=(e)=>{
+    nav("/")
   }
   return (
     <>
@@ -62,10 +64,12 @@ export default function Registerpage(){
             <input type="password" placeholder="Confirm Password"  required name='Confirm' onChange={changevalue}/>
           </div>
           <p className='errormessa'>{Error}</p>
-          <button className='registerbtn' type='submit'>Register</button>
+          <button className='registerbtn' type='submit'>Register Now</button>
+           <button className='allready' type='button' onClick={allready}>All Ready Register</button>
           </form>
         </div>
       </div>
     </>
   );
 }
+
