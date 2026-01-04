@@ -40,10 +40,10 @@
   position: fixed;
   top: 0;
   left: -260px;
-  width: 260px;
+  width: 160px;
   height: 100vh;
   background: #1a1a1a;
-  padding-top: 70px;
+  padding-top: 50px;
   transition: left 0.3s ease;
   z-index: 1000;
 }
@@ -54,7 +54,7 @@
 
 .link {
   display: block;
-  padding: 15px 20px;
+  padding: 10px 20px;
   color: white;
   text-decoration: none;
 }
@@ -62,7 +62,17 @@
 .link:hover {
   background: #333;
 }
-
+.linKheading {
+  color: tomato;           /* soft yellow */
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-decoration: none;
+  padding: 15px 15px;
+  display: block;
+  border-bottom: 1px solid #333;
+  text-shadow: 10px 10px 10px black;
+}
 /* Close Button */
 .close-btn {
   position: absolute;
