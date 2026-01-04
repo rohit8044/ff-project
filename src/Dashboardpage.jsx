@@ -51,7 +51,7 @@ useEffect(() => {
           ✖
         </button>
 
-        <Link to="/dashboard" className="link">
+        <Link to="/dashboard" className="linKheading">
           Dashboard
         </Link>
 
