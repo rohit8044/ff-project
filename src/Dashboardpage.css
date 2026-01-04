@@ -98,25 +98,44 @@
   overflow: hidden;
 }
 .dashboard {
+  position: relative;
   height: 100vh;
-  background-color: white;
-  text-align: center;
-  overflow: hidden;  
+  overflow: hidden;
 }
+/* Background Image with blur */
+.dashboard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://dl.dir.freefiremobile.com/common/web_event/official2.ff.garena.all/202210/aa959aa3d8790d3a44f7f20f16adfa01.jpg");
+  background-size: cover;       /* cover entire area */
+  background-position: center;  /* center the image */
+  background-repeat: no-repeat;
+  filter: blur(2px);            /* adjust blur */
+  z-index: 1;
+}
+/* Content above background */
 .dashboard h1 {
-  color: gray;
-  padding: 15px 30px;
-  white-space: nowrap;   /* text ek line me rahe */
+  position: relative;
+  z-index: 2;
+  color: #fff700; /* neon yellow */ 
+  text-shadow: 10px 10px 10px black;
+  font-size: 48px;
+  text-shadow: 0 0 10px black;
+  white-space: nowrap;           /* text ek line me rahe */
   display: inline-block;
-  animation: marquee 8s linear infinite;
-}
-/* Animation */
-@keyframes marquee {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-200%);
-  }
+  animation: marquee 10s linear infinite;  /* duration + timing + repeat */
 }
 
+/* Keyframes */
+@keyframes marquee {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
