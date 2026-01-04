@@ -11,7 +11,7 @@ export default function Loginpage(){
     const navigate = useNavigate();
     const submit=(e)=>{
         e.preventDefault();
-        navigate("/dashboard")
+        navigate("/dashboard");
     }
     const handlePhoneChange = (e) => {
         setPhone(e.target.value.replace(/[^0-9]/g, ""));
