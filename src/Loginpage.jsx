@@ -1,46 +1,64 @@
-import './Loginpage.css'
-import { Link } from "react-router-dom";
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
-import { FiEye, FiEyeOff } from "react-icons/fi";
+import { useState } from "react";
+import "./loginpage.css";
 
-export default function Loginpage(){
-    const [phone, setPhone] = useState("");
+export default function Login() {
+  const [success, setSuccess] = useState(false);
 
-    const [showPassword, setShowPassword] = useState(false);
-    const navigate = useNavigate();
-    const submit=(e)=>{
-        e.preventDefault();
-        navigate("/dashboard");
-    }
-    const handlePhoneChange = (e) => {
-        setPhone(e.target.value.replace(/[^0-9]/g, ""));
-    };
+  return (
+    <div className="container">
+      <div className="card">
 
-    return(
-        <>
-        <div className="container">
-            <div className='logindiv'>
-                <h3 className='freefire'>FREE FIRE</h3>
-                <form onSubmit={submit} > 
-                <label>Phone Nubmer</label>
-                <div className='inputbox'>
-                    <span className="logo">📞</span>
-                    <input type="text" placeholder="Phone Number" required maxLength={10} value={phone} onChange={handlePhoneChange} inputMode="numeric" pattern="[0-9]*" />
-                </div>
-                <label>Password</label>
-                 <div  className='inputbox'>
-                    <span className="logo">🔒</span>
-                   <input type={showPassword ? "text" : "password"} placeholder="Password" required  maxLength={12}/>
-                    <button type="button" onClick={() => setShowPassword(!showPassword)} className='showbtn'> {showPassword ? <FiEyeOff /> : <FiEye />}</button>
-                </div>
-                <button className='loginbtn'>Log in</button>
-                </form>
-                 <Link to="/register" className='create'>Creact Account</Link>
-                <a href="#" className='forget'>Forget Password</a>
-                <p className='Garena'>© Garena  Free Fire Style</p>
+        {/* ALWAYS VISIBLE */}
+        <div className="icon">👤</div>
+        <h2>PAYMENT DETAIL</h2>
+        <p>Please sign in to continue</p>
+
+        {/* HIDE ON SUCCESS */}
+        {!success && (
+          <>
+            <div className="inputBox">
+              ✉️
+              <input placeholder="Email address" />
             </div>
-        </div>
-        </>
-    )
+
+            <div className="inputBox">
+              🔒
+              <input type="password" placeholder="Password" />
+            </div>
+
+            <div className="row">
+              <label><input type="checkbox" /> Remember me</label>
+              <span>Forgot password?</span>
+            </div>
+
+            <button onClick={() => setSuccess(true)}>LOGIN</button>
+
+            <p className="or">OR CONTINUE WITH</p>
+
+            <div className="social">
+              <div>G</div>
+              <div>🐱</div>
+              <div>🐦</div>
+            </div>
+
+            <p className="signup">
+              Don’t have an account? <span>Sign up</span>
+            </p>
+          </>
+        )}
+
+        {/* SUCCESS CONTENT */}
+        {success && (
+          <div className="success">
+            <div className="circle">
+              <div className="tick"></div>
+            </div>
+            <h3>LOGIN SUCCESS</h3>
+          </div>
+        )}
+
+      </div>
+    </div>
+  );
 }
+
