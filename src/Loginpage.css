@@ -43,7 +43,7 @@ label{
   display:flex;
   align-items:center;
   gap:10px;
-  padding:12px;
+  padding:16px;
   margin:12px 0;
   border-radius:14px;
   background:#e9eef4;
@@ -55,11 +55,18 @@ label{
   background:transparent;
   width:100%;
 }
+.Errormessa{
+  margin-top: -10px;
+}
 .row{
   display:flex;
+  padding-top: 2px;
   justify-content:space-between;
   font-size:13px;
   color:#6b7280;
+}
+.row span{
+  padding-top: 11px;
 }
 .inputBox .btn{
   position: relative;
