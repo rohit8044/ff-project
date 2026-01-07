@@ -81,9 +81,9 @@ export default function Login() {
 
         {/* SUCCESS CONTENT */}
         {success && (
-          <div className="success">
+          <div className="successBox">
             <div className="circle">
-              <div className="tick"></div>
+              <div className="successCircle">✔</div>
             </div>
             <h3>LOGIN SUCCESS</h3>
             <p>Redirecting to dashboard...</p>
@@ -93,5 +93,3 @@ export default function Login() {
     </div>
   );
 }
-
-
