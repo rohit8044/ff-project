@@ -26,10 +26,19 @@ body{
   align-items:center;
   justify-content:center;
   box-shadow: inset 6px 6px 12px #cfd3d8,inset -6px -6px 12px #ffffff;
+  font-size: 35px;
+  padding-bottom: 10px;
 }
 h2{ color:#3a4250 }
 p{ color:#7a7f8c; font-size:14px }
-
+label{
+  display: block;  
+  padding-top: 10px;     /* make label full width */
+  text-align: left;     /* align text to left */
+  margin-bottom: -10px;   /* optional spacing from input */
+  font-weight: 600;     /* optional */
+  font-size: 15px;
+}
 .inputBox{
   display:flex;
   align-items:center;
@@ -38,8 +47,7 @@ p{ color:#7a7f8c; font-size:14px }
   margin:12px 0;
   border-radius:14px;
   background:#e9eef4;
-  box-shadow: inset 5px 5px 10px #cfd3d8,
-              inset -5px -5px 10px #ffffff;
+  box-shadow: inset 5px 5px 10px #cfd3d8,inset -5px -5px 10px #ffffff;
 }
 .inputBox input{
   border:none;
@@ -53,7 +61,14 @@ p{ color:#7a7f8c; font-size:14px }
   font-size:13px;
   color:#6b7280;
 }
-button{
+.inputBox .btn{
+  position: relative;
+  margin-left: -10px;
+  background-color: none;
+  border: none;
+  font-size: 18px;
+}
+.btnlogin{
   width:100%;
   padding:14px;
   margin-top:18px;
@@ -61,11 +76,11 @@ button{
   border-radius:16px;
   background:#e9eef4;
   font-weight:600;
-  box-shadow: 6px 6px 12px #cfd3d8,
-             -6px -6px 12px #ffffff;
+  box-shadow: 6px 6px 12px #cfd3d8,-6px -6px 12px #ffffff;
 }
 .or{
-  margin-top:25px;
+  margin-top:15px;
+  margin-bottom: 10px;
 }
 .social{
   display:flex;
@@ -79,18 +94,31 @@ button{
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow: 5px 5px 10px #cfd3d8,
-             -5px -5px 10px #ffffff;
+  box-shadow: 5px 5px 10px #cfd3d8,-5px -5px 10px #ffffff;
 }
-.signup span{ font-weight:600 }
+P{
+  font-weight: 600;
+}
+.signup{
+  padding-top: 10px;
+  text-decoration: none;
+}
+.signup a {
+  font-weight: 600;
+  color: #3a4250;
+  text-decoration: none; /* underline remove */
+}
+.signup a:hover {
+  text-decoration: underline; /* hover me underline */
+}
 
 /* SUCCESS ANIMATION */
 .success{
   animation:fade 0.4s ease;
 }
 .circle{
-  width:90px;
-  height:90px;
+  width:100px;
+  height:100px;
   min-width: auto;
   border-radius:50%;
   border:4px solid #00c853;
@@ -101,7 +129,7 @@ button{
 }
 .tick{
   position:absolute;
-  width:22px;
+  width:30px;
   height:45px;
   border-right:5px solid #00c853;
   border-bottom:5px solid #00c853;
