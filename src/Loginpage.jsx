@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useNavigate, Link } from "react-router-dom";
-
-import "./loginpage.css";
+import "./Loginpage.css";
 
 export default function Login() {
   const nav = useNavigate();
@@ -94,4 +93,5 @@ export default function Login() {
     </div>
   );
 }
+
 
