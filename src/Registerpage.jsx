@@ -35,41 +35,42 @@ export default function Registerpage(){
   }
   return (
     <>
-      <div className="regcontainer">
-        <div className="regbox">
-          <h3 className='regster'>REGISTER</h3>
+      <div className="container1">
+        <div className="card1">
+           <div className="icon1">👤</div>
+              <h2>CREACT ACCOUNT</h2>
+                 <p>Please sign up to continue</p>
         <form onSubmit={handleSubmit }> 
 
           <label>Candidate Name</label>
-          <div className="inputbox">
-            <span className="icon">👤</span>
+          <div className="inputBox1">
+            👤
             <input type="text" placeholder="Candidate Name" required name='User' onChange={changevalue}/>
           </div>
 
           <label>Phone Number</label>
-          <div className="inputbox">
-            <span className="icon">📞</span>
-        <input type="text" placeholder="Phone Number" maxLength="10" required name="Phone" value={value.Phone} onChange={changevalue} inputMode="numeric" pattern="[0-9]*" />
-          </div>
+          <div className="inputBox1">
+            📞
+            <input type="text" placeholder="Phone Number" maxLength="10" required name="Phone" value={value.Phone} onChange={changevalue} inputMode="numeric" pattern="[0-9]*" />
+           </div>
 
           <label>Password</label>
-          <div className="inputbox">
-            <span className="icon">🔒</span>
-            <input type="password" placeholder="Password" required name='Password' onChange={changevalue}/>
+          <div className="inputBox1">
+              🔒
+             <input type="password" placeholder="Password" required name='Password' onChange={changevalue}/>
           </div>
 
           <label>Confirm Password</label>
-          <div className="inputbox">
-            <span className="icon">🔒</span>
+          <div className="inputBox1">
+            🔒
             <input type="password" placeholder="Confirm Password"  required name='Confirm' onChange={changevalue}/>
           </div>
-          <p className='errormessa'>{Error}</p>
-          <button className='registerbtn' type='submit'>Register Now</button>
-           <button className='allready' type='button' onClick={allready}>All Ready Register</button>
+          <p className='Errormessa'>{Error}</p>
+          <button className='btnlogin1' type='submit'>Sign up</button>
+           <button className='btnlogin2' type='button' onClick={allready}>All ready </button>
           </form>
         </div>
       </div>
     </>
   );
 }
-
