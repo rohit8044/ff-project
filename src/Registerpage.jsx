@@ -17,49 +17,60 @@ export default function Registerpage() {
 
   // Handle input changes
   const changeValue = (e) => {
-    const { name, value: inputValue } = e.target;
-    if (name === "Phone_number") {
-      // Only allow numbers
-      setValue(prev => ({ ...prev, Phone_number: inputValue.replace(/[^0-9]/g, "") }));
-    } else {
-      setValue(prev => ({ ...prev, [name]: inputValue }));
+  const { name, value: inputValue } = e.target;
+
+  if (name === "Phone_number") {
+    // Only allow numbers and ensure the length doesn't exceed 10 digits
+    const cleanedValue = inputValue.replace(/[^0-9]/g, ""); // Remove non-numeric characters
+    if (cleanedValue.length <= 10) {
+      setValue(prev => ({ ...prev, Phone_number: cleanedValue }));
     }
-  };
+  } else {
+    setValue(prev => ({ ...prev, [name]: inputValue }));
+  }
+};
+
 
   // Form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    // ✅ Check if passwords match first
-    if (value.pass_word !== value.Confirm) {
-      setError("Passwords do not match!");
-      return;
+  // Check if the phone number has exactly 10 digits
+  if (value.Phone_number.length !== 10) {
+    setError("Phone number must be exactly 10 digits!");
+    return;
+  }
+
+  // Check if passwords match
+  if (value.pass_word !== value.Confirm) {
+    setError("Passwords do not match!");
+    return;
+  }
+
+  try {
+    const res = await axios.post('http://localhost:3000/signup', {
+      Candidate_name: value.Candidate_name,
+      Phone_number: value.Phone_number,
+      pass_word: value.pass_word,
+    });
+
+    setError(''); // Clear any previous error
+    setIsSuccess(true);
+    console.log(res.data.msg); // Optional: success message
+
+    setTimeout(() => {
+      nav('/'); // Redirect after 2 seconds
+    }, 2000);
+
+  } catch (err) {
+    if (err.response && err.response.data && err.response.data.msg) {
+      setError(err.response.data.msg);
+    } else {
+      setError("Something went wrong!");
     }
+  }
+};
 
-    try {
-      // ✅ Send correct field names to backend
-      const res = await axios.post('http://localhost:3000/signup', {
-        Candidate_name: value.Candidate_name,
-        Phone_number: value.Phone_number,
-        pass_word: value.pass_word,
-      });
-
-      setError('');
-      setIsSuccess(true);
-      console.log(res.data.msg); // optional: success message
-
-      setTimeout(() => {
-        nav('/'); // redirect after 2 seconds
-      }, 2000);
-
-    } catch (err) {
-      if (err.response && err.response.data && err.response.data.msg) {
-        setError(err.response.data.msg);
-      } else {
-        setError("Something went wrong!");
-      }
-    }
-  };
 
   // Navigate to login page
   const already = () => {
