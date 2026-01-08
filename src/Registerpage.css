@@ -10,7 +10,8 @@ body{
   align-items:center;
 }
 .card1{
-  width:340px;
+  width:95%;
+  max-width: 600px;
   padding:28px;
   border-radius:25px;
   background:#e9eef4;
@@ -42,7 +43,7 @@ label{
 .inputBox1{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:10px;  
   padding:16px;
   margin:12px 0;
   border-radius:14px;
